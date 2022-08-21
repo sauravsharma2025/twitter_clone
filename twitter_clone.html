@@ -67,13 +67,41 @@
             <div class="feed_header"><h2>Home</h2></div>
         <!--Tweetbox Start-->
         <div class="tweetbox">
-            <form><div class="tweetbox_input">
+          <div class="tweetbox_input">
                 <img src="images/man.png" alt="">
-                <input type="text" placeholder="What's Happening">
+                <input id="tweet_data" type="text" placeholder="What's Happening">
             </div>
-        <button class="TweetBox_tweetButton">Tweet</button></form>
+            <div id="twtbox" style="text-align: end;">
+        <button class="TweetBox_tweetButton" onclick="take_tweet()">Tweet</button></div>
         </div>
         <!--Tweetbox End-->
+        <!--this tweet box is for making tweet post without submit -->
+        <div  id="twt_div"class="post" style="display:none ;">
+            <div class="post_avatar">
+                <img src="/images/man.png" alt="avatar">
+            </div>
+            <div class="post_body">
+                <div class="post_header">
+                    <div class="post_headerText">
+                        <h3>Saurav Kumar Sharma
+                        <span class="post_headerSpecial">
+                        <span class="material-icons post__badge">verified</span>@Saurav_Sharma
+                        </span>
+                        </h3>
+                    </div>
+                    <div class="post_headerDescription">
+                        <p id="tweeting"></p>
+                    </div>
+                </div>
+                <div class="post_footer">
+                    <span class="material-icons">reply</span>
+                    <span class="material-icons">publish</span>
+                    <span class="material-icons">favorite border</span>
+                   
+
+                </div>
+            </div>
+        </div>
         <!--Post section start-->
         <div class="post">
             <div class="post_avatar">
@@ -88,6 +116,7 @@
                         </span>
                         </h3>
                     </div>
+                   
                     <div class="post_headerDescription">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
@@ -147,5 +176,6 @@
         </div>
 
         <!--Widget End-->
+    <script src="twitter_clone.js"></script>
     </body>
 </html>
