@@ -1,14 +1,16 @@
-function take_tweet(){    
-    var tweet= document.getElementById('tweet_data').value
-    if(tweet==''){
-        alert('Please type something for Tweeting')
-    }
-    else{
-
-    alert('You have posted successfully')
-    let p = document.createElement('div')
+ //var tweet_img=document.getElementById('file_input').value
+   // console.log(tweet_img) 
     //p.innerHTML=tweet
-      
+  var ele = document.querySelector('#twtbtn')  
+  var Element = document.querySelector('#file_input');
+  var img = document.querySelector('#imgtwt');
+  ele.addEventListener("click",abc)
+  function abc(){
+    var url = URL.createObjectURL(Element.files[0]);
+    img.src = url;
+    var tweet= document.getElementById('tweet_data').value
+    let p = document.createElement('div')
+
     //document.getElementById('tweeting').innerHTML=tweet
     document.getElementById('boiler_div').appendChild(p)
     var done =`
@@ -29,6 +31,7 @@ function take_tweet(){
                 <p id="tweeting">${tweet}</p>
             </div>
         </div>
+        <img src="${url}" alt=""/>
         <div class="post_footer">
             <span class="material-icons">reply</span>
             <span class="material-icons">publish</span>
@@ -39,8 +42,9 @@ function take_tweet(){
     </div>
 </div> `
 p.innerHTML=done
-    }
- document.getElementById('tweet_data').value=''
+document.getElementById('tweet_data').value=''    
 }
+ 
+
    
    

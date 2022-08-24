@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>URL.createObjectURL example</title>
+</head>
+<body>
+<h1>GeeksforGeeks</h1>
+<input type="file">
+<img id="imgtwt">
+<p class="p">The URL of this image is : </p>
+<button id="btn"></button>
+</body>
+<script>
+	/*var Element = document.querySelector('btn');
+    var ele = document.querySelector('input');
+	var img = document.querySelector('#imgtwt');
+	btn.addEventListener('click', function() {
+	var url = URL.createObjectURL(ele.files[0]);
+	img.src = url;
+	console.log(url);
+	
+});*/
+var arra=new Array(3)
+for(var a=0;a<3;a++){
+    arra[a]=prompt("Enter Array values");
+}
+
+
+var arr = new Array(10,44,'gg',66,true)
+for(var i=0;i<=arr.length;i++){
+    document.write(" "+arr[i]+"<br>")
+}
+
+</script>
+</html>
+<html>
+    <head>
+        <style>
+            .container {
+  font-family: arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex {
+  background: #6AB6D8;
+  padding: 10px;
+  margin-bottom: 50px;
+  border: 3px solid #2E86BB;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+}
+
+.flex::after {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 100%;
+  margin-top: 10px;
+  width: 100%;
+  color: #333;
+  font-size: 12px;
+}
+
+.flex1 {
+  flex-basis: auto;
+}
+
+.flex1::after {
+  content: 'auto';
+}
+
+.flex2 {
+  flex-basis: max-content;
+}
+
+.flex2::after {
+  content: 'max-content';
+}
+
+.flex3 {
+  flex-basis: min-content;
+}
+
+.flex3::after {
+  content: 'min-content';
+}
+
+.flex4 {
+  flex-basis: fit-content;
+}
+
+.flex4::after {
+  content: 'fit-content';
+}
+
+.flex5 {
+   flex-basis: content;
+}
+
+.flex5::after {
+  content: 'content';
+}
+
+        </style>
+    </head>
+<ul class="container">
+    <li class="flex flex1">1: flex-basis test</li>
+    <li class="flex flex2">2: flex-basis test</li>
+    <li class="flex flex3">3: flex-basis test</li>
+    <li class="flex flex4">4: flex-basis test</li>
+    <li class="flex flex5">5: flex-basis test</li>
+  </ul>
+  
+  <ul class="container">
+    <li class="flex flex6">6: flex-basis test</li>
+  </ul>
+  </html>

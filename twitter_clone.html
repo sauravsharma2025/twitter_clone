@@ -71,10 +71,24 @@
                 <img src="images/man.png" alt="">
                 <input id="tweet_data" type="text" placeholder="What's Happening">
             </div>
-            <div id="twtbox" style="text-align: end;">
-        <button class="TweetBox_tweetButton" onclick="take_tweet()">Tweet</button></div>
+          <!--img icon!-->
+          <div class="image-upload">
+            <label for="file_input">
+                <span class="material-icons">
+                    image
+                    </span>
+            </label>
+        
+            <input id="file_input" type="file"/>
         </div>
-        <div id="boiler_div"></div>
+            <div id="twtbox" style="text-align: end;">
+                
+        <button id="twtbtn" class="TweetBox_tweetButton">Tweet</button></div>
+        </div>
+        <div id="boiler_div">
+            <p id="imgtwt">
+        </div>
+        
         <!--Tweetbox End-->
         <!--this tweet box is for making tweet post without submit -
         <div  id="twt_div"class="post" style="display:flex;flex-direction: column;">
