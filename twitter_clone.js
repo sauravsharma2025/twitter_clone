@@ -1,29 +1,19 @@
  //var tweet_img=document.getElementById('file_input').value
    // console.log(tweet_img) 
     //p.innerHTML=tweet 
-  var ele = document.querySelector('#twtbtn')  
+  var ele = document.querySelector('#twtbtn')
+   
   var Element = document.querySelector('#file_input');
   
   var img = document.querySelector('#imgtwt');
   ele.addEventListener("click",abc)
   function abc(){
    if(Element.files.length!==0){
-   console.log(Element.files[0])
    
     var url = URL.createObjectURL(Element.files[0]);
-
-    console.log("abc")
-    console.log(url)
+   
     img.src = url;
-   
-
    }
-
-  
-      
-   
-   
-    
     var tweet= document.getElementById('tweet_data').value
     let p = document.createElement('div')
    
@@ -63,29 +53,26 @@ close
             done3=''
           
         }
-        
        var done2=` <div class="post_footer">
             <span class="material-icons">reply</span>
             <span class="material-icons">publish</span>
             <span class="material-icons">favorite border</span>
-           
-
         </div>
     </div>
 </div></div>`
 
 var done=done1+done3+done2
 p.innerHTML=done
-var reomvetwt=document.getElementById('dd');
-reomvetwt.addEventListener("click",function(event){
-    var removed=event.target
-    removed.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
-})
+
 
 }
 
-
-
-
+document.body.addEventListener('click',function(event){
+    if(event.target.id=='rmvtwt'){
+        var removed=event.target
+        removed.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
+        
+    }
+})
    
    
