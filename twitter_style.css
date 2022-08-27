@@ -210,3 +210,7 @@ body{
  {
      display: none;
  }
+ .remove_twt{
+    display:inline;
+    float:right;
+ }
