@@ -10,8 +10,8 @@
   function abc(){
    if(Element.files.length!==0){
    
-    var url = URL.createObjectURL(Element.files[0]);
-   
+    var url = URL.createObjectURL(Element.files[0]);//only accepting var??
+   URL.revokeObjectURL(Element.files[0]);
     img.src = url;
    }
     var tweet= document.getElementById('tweet_data').value
@@ -44,10 +44,11 @@ close
                 <p id="tweeting">${tweet}</p>
             </div>
         </div>`
+        
         if(url!=null){
 
        var done3= `<img src="${url}" alt=""/>`
-       url=''
+       
         }
         else{
             done3=''
@@ -74,5 +75,22 @@ document.body.addEventListener('click',function(event){
         
     }
 })
+  function trigger(){
+  let user_id = document.querySelector('#user_id').value;
+  let pwd=document.querySelector('#pwd').value;
+ // localStorage.setItem(user_id,user_id)  
+ // localStorage.setItem(pwd,pwd)
+
+if(user_id==localStorage.getItem(user_id)&& pwd==localStorage.getItem(pwd)){
+    modal.style.display="none";
+}
+  }
+var modal=document.getElementById('Login');
+var btn = document.getElementById('trigger');
+var span= document.getElementsByClassName('close')[0];
+ modal.style.display="block";
+
+
+
    
    

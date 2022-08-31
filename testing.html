@@ -1,21 +1,25 @@
+<html>
+  <head>
 
-
-<p><input type="number" id="ageToCheck" value="30"></p>
-<button onclick="myFunction()">Test</button>
-
-<p id="demo"></p>
+  </head>
+   <!--
+    <div class="input">
+      <h1>
+        lOGIN  PAGE
+      </h1>
+    <label for="userid">Enter your Email</label>
+    <input type="text" id="user_id" class="input_field"><br>
+    <label for="pass">Enter your Password</label>
+    <input type="password" id="pwd" class="input_field">
+     <button name="btn" class="btn-btn" id="xyz" onclick="trigger()">Submit</button> 
+  </div>
+  </body>-->
 
 <script>
-const ages = [32, 33, 12, 40];
+ let a="Javascript";
+ let b=a.substring(3,7);
+ console.log(b )
 
-function checkAge(age) {
-  return age > document.getElementById("ageToCheck").value;
-}
 
-function myFunction() {
-  document.getElementById("demo").innerHTML = ages.filter(checkAge);
-}
 </script>
-
-</body>
 </html>

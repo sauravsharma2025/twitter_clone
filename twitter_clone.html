@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
+        
         <!--Side bar-->
         <div class="Sidebar">
             <i class="fab fa-twitter"></i>
@@ -59,7 +60,7 @@
                 <h2>More</h2>    
                    
             </div>
-            <button class="sidebar_tweet">Tweet</button>  
+            <button class="sidebar_tweet" id="trigger">Tweet</button>  
         </div>
         <!--Sidebar Ends-->
         <!--Feed start-->
@@ -193,7 +194,38 @@
                 <blockquote class="twitter-tweet"><p lang="hi" dir="ltr">हर बच्चे को देशभर में अच्छी और फ़्री शिक्षा मिले, हर व्यक्ति को अच्छा और फ़्री इलाज मिले - हमें अब इस कार्य में युद्धस्तर पर लग जाना चाहिए। तभी भारत नम्बर वन देश बनेगा। <a href="https://t.co/oAj9TmQH0d">https://t.co/oAj9TmQH0d</a></p>&mdash; Arvind Kejriwal (@ArvindKejriwal) <a href="https://twitter.com/ArvindKejriwal/status/1559412248162242560?ref_src=twsrc%5Etfw">August 16, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </div>
+        <div id="Login" class="login_class">
+            <!--Modal Content-->
+            <div class="model-content">
+              <div class="modal-header">
+                <!--<span class="close">&times;</span>-->
+                <h2>Login</h2>
 
+              </div>
+
+              <div class="modal-body">
+                <i class='fas fa-users' style='font-size:48px;color:var(--twitter-color);margin: 5px;'></i>
+                <div class="input">
+                    <div class="input-container">
+                    <i class="fa fa-user icononic"></i> 
+                    <span style="border:1px solid black;"></span>  
+                <input type="text" id="user_id" class="input_field" placeholder="Username" required><br>
+            </div>
+            <div class="input-container">
+                <i class="fa fa-key icononic"></i>
+                <span style="border:1px solid black;"></span>  
+                <input type="password" id="pwd" class="input_field"
+                placeholder="Password" required>
+                 
+                
+              </div>
+              <div class="modal-footer">
+                <button name="btn" class="btn-btn" id="xyz" onclick="trigger()" >Submit</button>
+                <p>Do not have account? Create <a href="">Here</a></p> 
+              </div>
+              </div>
+            </div>
+                </div>
         <!--Widget End-->
     <script src="twitter_clone.js"></script>
     
