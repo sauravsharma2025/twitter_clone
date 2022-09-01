@@ -27,7 +27,7 @@
     <div id='twth'>
     <div  id="twt_div"class="post" style="display:flex ;">
     <div class="post_avatar">
-        <img src="/images/man.png" alt="avatar">
+        <img src="images/man.png" alt="avatar">
     </div>
     <div class="post_body">
         <div class="post_header">
