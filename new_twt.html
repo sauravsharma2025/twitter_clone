@@ -1,127 +1,34 @@
-<html>
-  <head>
-    <title>Hello</title>
-    <style>
-      
-      body{
-        font-family:Arial, Helvetica, sans-serif;
-      }
-      /*Modal Background*/
-      .login_class{
-       display: none;
-        position:fixed;
-        z-index: 1;
-        left:0;
-        top:0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        animation-name: fadeIn;
-        animation-duration: 0.4;
-        background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-      }
-      .model-content{
-        display: flex;
-        flex-direction: column;
-        margin:550px;
-        position:fixed;
-       margin-top:150px;
-        background-color:#fefefe;
-        width:300px;
-        text-align: center;
-        animation-name:sildeIn;
-        animation-duration: 0.4;
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 
-      }
-      /*close button*/
-      .close{
-      color:white;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      }
-      .close:hover,.close:focus{
-        color:#000;
-        text-decoration: none;
-        cursor: pointer;
-      }
-      .modal-header{
-        padding: 2px 16px;
-        background-color:#5cb85c;
-        color: white;
-      }
-      .modal-body{
-        padding: 2px 16px;
-      }
-      .modal-footer{
-        padding: 2px 16px;
-        background-color: #5cb85c;
-        color: white;
-      }
-      @keyframes sildIn{
-        from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
-      }
-      @keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
-    </style>
-  </head>
-  <body>
-    <h2>Click To Login</h2>
-    <button id="trigger">Log-In</button>
-    <!--The Modal-->
-    <div id="Login" class="login_class">
-<!--Modal Content-->
-<div class="model-content">
-  <div class="modal-header">
-    <span class="close">&times;</span>
-    <h2>Modal Header</h2>
-  </div>
-  <div class="modal-body">
-    <div class="input">
-      <h1>
-        LOGIN  PAGE
-      </h1>
-    <label for="userid">Enter your Email</label>
-    <input type="text" id="user_id" class="input_field"><br>
-    <label for="pass">Enter your Password</label>
-    <input type="password" id="pwd" class="input_field">
-     
-    
-  </div>
-  <div class="modal-footer">
-    <button name="btn" class="btn-btn" id="xyz" onclick="trigger()">Submit</button> 
-  </div>
-  </div>
-</div>
-    </div>
-   
-</html>
-<script>
-  function trigger(){
-  let user_id = document.querySelector('#user_id').value;
-  let pwd=document.querySelector('#pwd').value;
- // localStorage.setItem(user_id,user_id)  
- // localStorage.setItem(pwd,pwd)
+/* Basic and simple one */
+<div id="qrcode"></div>
+<script type="text/javascript">
+new QRCode(document.getElementById("qrcode"), "https://webisora.com");
+</script>
 
-if(user_id==localStorage.getItem(user_id)&& pwd==localStorage.getItem(pwd)){
-console.log("hello saurav")
-}
-  }
-  
+/*With some options*/
 
-var modal=document.getElementById('Login');
-var btn = document.getElementById('trigger');
-var span= document.getElementsByClassName('close')[0];
-btn.onclick=function(){
-  modal.style.display="block";
-}
-span.onclick=function(){
-  modal.style.display="none";
-}
-
-
+<div id="qrcode-2"></div>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode-2"), {
+	text: "http://192.168.43.242:5500/twitter_createacc.html",
+	width: 128,
+	height: 128,
+	colorDark : "#5868bf",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+});
+window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;//compatibility for Firefox and chrome
+var pc = new RTCPeerConnection({iceServers:[]}), noop = function(){};      
+pc.createDataChannel('');//create a bogus data channel
+pc.createOffer(pc.setLocalDescription.bind(pc), noop);// create offer and set local description
+pc.onicecandidate = function(ice)
+{
+ if (ice && ice.candidate && ice.candidate.candidate)
+ {
+  var myIP = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/.exec(ice.candidate.candidate)[1];
+  alert('my IP: ', myIP);   
+  pc.onicecandidate = noop;
+ }
+};
 </script>

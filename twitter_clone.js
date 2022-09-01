@@ -20,7 +20,9 @@
     //document.getElementById('tweeting').innerHTML=tweet
     document.getElementById('boiler_div').appendChild(p)
     document.getElementById('tweet_data').value='' 
-
+   let current_user=localStorage.getItem(document.getElementById('user_id').value)
+   let current_user_obj=JSON.parse(current_user);
+   console.log(current_user_obj.name);
     var done1 =`
     <div id='twth'>
     <div  id="twt_div"class="post" style="display:flex ;">
@@ -30,9 +32,9 @@
     <div class="post_body">
         <div class="post_header">
             <div class="post_headerText">
-                <h3>Saurav Kumar Sharma
+                <h3><span id="tweet_user">${current_user_obj.name+" "+current_user_obj.last}</span>
                 <span class="post_headerSpecial">
-                <span class="material-icons post__badge">verified</span>@Saurav_Sharma
+                <span class="material-icons post__badge">verified</span>@${current_user_obj.name+current_user_obj.last}
                 </span>
                 <div class="remove_twt">
                 <button id='dd'><span id='rmvtwt' class="material-icons">
@@ -80,8 +82,10 @@ document.body.addEventListener('click',function(event){
   let pwd=document.querySelector('#pwd').value;
  // localStorage.setItem(user_id,user_id)  
  // localStorage.setItem(pwd,pwd)
-
-if(user_id==localStorage.getItem(user_id)&& pwd==localStorage.getItem(pwd)){
+ profile=localStorage.getItem(user_id);
+ let profile_obj=JSON.parse(profile);
+ 
+if(user_id==profile_obj.name && pwd==profile_obj.password){
     modal.style.display="none";
 }
   }
@@ -90,6 +94,9 @@ var btn = document.getElementById('trigger');
 var span= document.getElementsByClassName('close')[0];
  modal.style.display="block";
 
+
+ //making username dyanmic
+ 
 
 
    
