@@ -88,12 +88,15 @@
         mobile:document.getElementById('mob').value,
         password:document.getElementById('new_pwd').value,
         gender:document.querySelector('input[name="gender"]:checked').value,
-        birthDate:date+"-"+month+"-"+year
+        birthDate:date+"-"+month+"-"+year,
+        count:0
+
     }
     localStorage.setItem(name,JSON.stringify(store));//jsonstring string bnaa ke save krne ke lie
   /* profile=localStorage.getItem('profile');
    let profile_obj=JSON.parse(profile);
    console.log(profile_obj)*/
+   window.location = "index.html";
 }
     
 </script>
