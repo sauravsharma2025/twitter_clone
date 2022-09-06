@@ -7,7 +7,7 @@
    if(Element.files.length!==0){
    
     var url = URL.createObjectURL(Element.files[0]);//only accepting var??
-   URL.revokeObjectURL(Element.files[0]);
+   URL.revokeObjectURL(Element.files[0]);//clearing image buffer but might be it is not working
     img.src = url;
    }
     var tweet= document.getElementById('tweet_data').value
@@ -73,8 +73,18 @@ close
     </div>
 </div></div>`
 
-var done=done1+done3+done2
+var done=done1+done3+done2 // use multiple backtick due to making use of js code in btween them
 p.innerHTML=done
+
+
+//chrome alert
+Notification.requestPermission().then(function (permission) {
+    console.log(permission);
+});
+ var title = "You have Tweeted successfully";
+icon = 'images/dog.jpg';
+var body = tweet;
+var notification = new Notification(title, { body, icon });
 }
 
   function trigger(){
@@ -87,8 +97,7 @@ p.innerHTML=done
  
  
  //Older Tweeet Restore
- //
-//console.log(profile_obj.count)
+
 for( var i=1;i<=profile_obj.count;i++){
 var tweet=profile_obj[i];
 
@@ -96,7 +105,7 @@ var tweet=profile_obj[i];
  if(Element.files.length!==0){
    
     var url = URL.createObjectURL(Element.files[0]);//only accepting var??
-  // URL.revokeObjectURL(Element.files[0]);
+  
     img.src = url;
     
    }
@@ -175,4 +184,3 @@ document.body.addEventListener('click',function(event){
         
     }
 })
- 
