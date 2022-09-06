@@ -78,7 +78,8 @@ p.innerHTML=done
 
 
 //chrome alert
-
+Notification.requestPermission().then(function (permission) {
+    console.log(permission);
 });
  var title = "You have Tweeted successfully";
 icon = 'images/dog.jpg';
@@ -185,3 +186,4 @@ document.body.addEventListener('click',function(event){
 })
 Notification.requestPermission().then(function (permission) {
     console.log(permission);
+});
