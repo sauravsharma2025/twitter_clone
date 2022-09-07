@@ -223,7 +223,7 @@
                     <div class="input-container">
                     <i class="fa fa-user icononic"></i> 
                     <span style="border:1px solid black;"></span>  
-                <input type="text" id="user_id" class="input_field" placeholder="Username" required><br>
+                <input type="text" id="user_id" class="input_field" onkeyup="enabling()" placeholder="Username" required><br>
             </div>
             <div class="input-container">
                 <i class="fa fa-key icononic"></i>
@@ -234,7 +234,7 @@
                 
               </div>
               <div class="modal-footer">
-                <button name="btn" class="btn-btn" id="xyz" onclick="trigger()" >Submit</button>
+                <button name="btn" class="btn-btn" id="xyz" onclick="trigger()"  disabled >Submit</button>
                 <p>Do not have account? Create <a href="twitter_createacc.html">Here</a></p> 
               </div>
               </div>
